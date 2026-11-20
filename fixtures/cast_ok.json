@@ -1,0 +1,32 @@
+{
+  "moulds": [
+    {
+      "id": "MOULD-1",
+      "version": 1,
+      "max_size": 3,
+      "inspected_until": "2026-02-01T00:00:00"
+    }
+  ],
+  "mixes": [
+    {
+      "id": "MIX-1",
+      "grade": 42,
+      "version": 1,
+      "approved_at": "2026-01-01T00:00:00",
+      "approved_by": "engineer"
+    }
+  ],
+  "casts": [
+    {
+      "id": "CAST-1",
+      "element_id": "ELEMENT-1",
+      "mould_id": "MOULD-1",
+      "mix_id": "MIX-1",
+      "at": "2026-01-10T00:00:00",
+      "finish_at": "2026-01-10T01:00:00",
+      "size": 2,
+      "grade": 40,
+      "version": 1
+    }
+  ]
+}

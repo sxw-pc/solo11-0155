@@ -1,0 +1,22 @@
+{
+  "labs": [
+    {
+      "id": "LAB-B",
+      "lab": "independent",
+      "start": "2026-01-01T00:00:00",
+      "end": "2026-02-01T00:00:00"
+    }
+  ],
+  "specimens": [
+    {
+      "id": "SPEC-B",
+      "element_id": "ELEMENT-1",
+      "cast_id": "CAST-1",
+      "cycle_id": "CYCLE-1",
+      "lab_id": "LAB-B",
+      "at": "2026-01-11T00:00:00",
+      "strength_mpa": 32,
+      "kind": "initial"
+    }
+  ]
+}

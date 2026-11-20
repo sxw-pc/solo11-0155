@@ -1,0 +1,13 @@
+{
+  "element":"ELEMENT-1",
+  "recorded_supervisor":"shift-a",
+  "load_units":12,
+  "supports":{"L":0,"M":2,"R":4},
+  "reported_center_range":[1.5,2.5],
+  "center_scenarios":[
+    {"x":1.5,"working_pair":["L","M"]},
+    {"x":2.5,"working_pair":["M","R"]}
+  ],
+  "support_limit":{"L":6,"M":10,"R":6},
+  "fixture_version":"BENCH-SIM-1"
+}
