@@ -25,6 +25,11 @@ class SteamTests(unittest.TestCase):
         self.db.close();self.db=connect(':memory:');self.first()
         c=fx('cast_ok')['casts'][0].copy();c.update(id='CAST-CONFLICT',mix_id='MIX-OTHER')
         self.assertEqual(cast.import_data(self.db,{'casts':[c]})[0]['state'],'version_conflict')
+    def test_bad_cast_blocks_demould_and_release(self):
+        x=fx('cast_ok');x['moulds'][0]['max_size']=1
+        cast.import_data(self.db,x);steam.import_data(self.db,fx('steam_ok'));strength.import_data(self.db,fx('strength_ok'))
+        self.assertEqual(self.state('steam_decision'),'cast_hold')
+        self.assertEqual(self.state('release_decision'),'curing_hold')
     def test_same_mould_overlapping_cast(self):
         self.first();other=fx('cast_ok')['casts'][0].copy();other.update(id='CAST-OTHER',element_id='ELEMENT-OTHER')
         self.assertEqual(cast.import_data(self.db,{'casts':[other]})[0]['state'],'mould_busy')
@@ -33,6 +38,10 @@ class SteamTests(unittest.TestCase):
         self.db.close();self.db=connect(':memory:');self.first()
         x=fx('steam_ok');x['cycles'][0]['max_gap_minutes']=3
         self.assertEqual(steam.import_data(self.db,x)[0]['state'],'curve_gap')
+    def test_curve_gap_blocks_shipping_release(self):
+        self.first();x=fx('steam_ok');x['cycles'][0]['max_gap_minutes']=3
+        steam.import_data(self.db,x);strength.import_data(self.db,fx('strength_ok'))
+        self.assertEqual(self.state('release_decision'),'curing_hold')
     def test_ramp_and_hold_duration(self):
         self.first();x=fx('steam_ok');x['samples'][1]['celsius']=50
         self.assertEqual(steam.import_data(self.db,x)[0]['state'],'ramp_exceeded')
