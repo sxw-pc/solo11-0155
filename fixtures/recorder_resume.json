@@ -1,0 +1,10 @@
+{
+  "cycle_id":"CYCLE-1",
+  "opening":{"absolute_minute":0,"celsius":40},
+  "closing":{"absolute_minute":10,"celsius":42},
+  "unlinked_packet":{"local_counter":1,"celsius":41},
+  "counter_reuse_explanations":[
+    {"origin":"prior_run retransmission","active_cycle_minute":null},
+    {"origin":"active_run","active_cycle_minute":5}
+  ]
+}

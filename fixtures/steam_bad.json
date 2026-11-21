@@ -1,0 +1,44 @@
+{
+  "sensors": [
+    {
+      "id": "SENSOR-B",
+      "sensor": "T-B",
+      "valid_from": "2026-01-01T00:00:00",
+      "valid_to": "2026-01-09T00:00:00",
+      "operator": "lab"
+    }
+  ],
+  "cycles": [
+    {
+      "id": "CYCLE-B",
+      "element_id": "ELEMENT-1",
+      "sensor_id": "SENSOR-B",
+      "start": "2026-01-10T01:00:00",
+      "end": "2026-01-10T01:10:00",
+      "min_hold_minutes": 8,
+      "max_ramp_cph": 15,
+      "max_gap_minutes": 5,
+      "hold_temp_c": 40
+    }
+  ],
+  "samples": [
+    {
+      "id": "TEMP-B1",
+      "cycle_id": "CYCLE-B",
+      "at": "2026-01-10T01:00:00",
+      "celsius": 40
+    },
+    {
+      "id": "TEMP-B2",
+      "cycle_id": "CYCLE-B",
+      "at": "2026-01-10T01:05:00",
+      "celsius": 41
+    },
+    {
+      "id": "TEMP-B3",
+      "cycle_id": "CYCLE-B",
+      "at": "2026-01-10T01:10:00",
+      "celsius": 42
+    }
+  ]
+}
