@@ -10,3 +10,5 @@ python -m unittest discover -s tests -v
 ```
 
 独立入口 `cast-import`、`steam-import`、`strength-import` 使用 `--db state.sqlite --input fixtures/<cast|steam|strength>_ok.json`；`_bad.json` 分别展示模具不适配、校准失效与强度不足。仅离线合成数据，不接真实蒸养设备。
+
+`recorder-import` 面向离线采集机的分页原件：保留每页原文字节、页内位置与实际采录凭据，按原仪器记录器回读（`readback`）或随炉独立终端的共同脉冲（`terminal`）两条经授权路线恢复真实观测身份。相同字节不一律当重传，相同温度也不合并独立采集；待核页组保留可读的下一读取动作，后到凭据只对受影响周期重放 `steam`/`strength` 裁决。旧有已声明正式样本 ID、采集时刻的输入仍走 `steam-import` 原接口。

@@ -17,6 +17,11 @@ CREATE TABLE IF NOT EXISTS shipping(id TEXT PRIMARY KEY,element_id TEXT NOT NULL
 CREATE TABLE IF NOT EXISTS release_decision(element_id TEXT PRIMARY KEY,state TEXT NOT NULL,reason TEXT NOT NULL,specimen_id TEXT,version INTEGER NOT NULL);
 CREATE TABLE IF NOT EXISTS future_mould_hold(mould_id TEXT PRIMARY KEY,state TEXT NOT NULL,reason TEXT NOT NULL);
 CREATE TABLE IF NOT EXISTS decision_history(id INTEGER PRIMARY KEY,subsystem TEXT NOT NULL,element_id TEXT NOT NULL,state TEXT NOT NULL,reason TEXT NOT NULL,source_id TEXT,created_at TEXT DEFAULT CURRENT_TIMESTAMP);
+CREATE TABLE IF NOT EXISTS recorder_page(id TEXT PRIMARY KEY,cycle_id TEXT NOT NULL,device_id TEXT NOT NULL,run_id TEXT,route TEXT NOT NULL,raw BLOB NOT NULL,received_seq INTEGER NOT NULL);
+CREATE TABLE IF NOT EXISTS recorder_frame(id TEXT PRIMARY KEY,page_id TEXT NOT NULL,position INTEGER NOT NULL,local_counter INTEGER NOT NULL,local_clock TEXT NOT NULL,celsius REAL NOT NULL,UNIQUE(page_id,position));
+CREATE TABLE IF NOT EXISTS recorder_observation(id TEXT PRIMARY KEY,cycle_id TEXT NOT NULL,absolute_at TEXT NOT NULL,celsius REAL,state TEXT NOT NULL,reason TEXT NOT NULL,authorizing_route TEXT);
+CREATE TABLE IF NOT EXISTS recorder_observation_source(observation_id TEXT NOT NULL,frame_id TEXT NOT NULL,route TEXT NOT NULL,PRIMARY KEY(observation_id,frame_id));
+CREATE TABLE IF NOT EXISTS recorder_pending(id TEXT PRIMARY KEY,cycle_id TEXT NOT NULL,reason TEXT NOT NULL,next_action TEXT NOT NULL);
 """
 def connect(path):
     db=sqlite3.connect(path);db.row_factory=sqlite3.Row;db.executescript(SCHEMA);return db
