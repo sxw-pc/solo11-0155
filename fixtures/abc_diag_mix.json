@@ -1,0 +1,25 @@
+{
+  "rechecks": [
+    {
+      "id": "RC-M1-PASS",
+      "investigation_id": "INV-SPEC-A2",
+      "axis": "mould",
+      "target_id": "M1",
+      "target_version": 1,
+      "sampled_at": "2026-01-16T00:00:00",
+      "signer": "engineer",
+      "result": "pass"
+    },
+    {
+      "id": "RC-X-FAIL",
+      "investigation_id": "INV-SPEC-A2",
+      "axis": "mix",
+      "target_id": "X",
+      "target_version": 1,
+      "sampled_at": "2026-01-16T00:00:00",
+      "signer": "engineer",
+      "result": "fail",
+      "note": "retained sample low strength"
+    }
+  ]
+}

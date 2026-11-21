@@ -1,0 +1,54 @@
+{
+  "labs": [
+    {
+      "id": "LAB-A",
+      "lab": "independent",
+      "start": "2026-01-01T00:00:00",
+      "end": "2026-03-01T00:00:00"
+    },
+    {
+      "id": "LAB-B",
+      "lab": "independent",
+      "start": "2026-01-01T00:00:00",
+      "end": "2026-03-01T00:00:00"
+    },
+    {
+      "id": "LAB-C",
+      "lab": "independent",
+      "start": "2026-01-01T00:00:00",
+      "end": "2026-03-01T00:00:00"
+    }
+  ],
+  "specimens": [
+    {
+      "id": "SPEC-A",
+      "element_id": "A",
+      "cast_id": "CAST-A",
+      "cycle_id": "CYCLE-A",
+      "lab_id": "LAB-A",
+      "at": "2026-01-11T00:00:00",
+      "strength_mpa": 42,
+      "kind": "initial"
+    },
+    {
+      "id": "SPEC-B",
+      "element_id": "B",
+      "cast_id": "CAST-B",
+      "cycle_id": "CYCLE-B",
+      "lab_id": "LAB-B",
+      "at": "2026-01-11T00:00:00",
+      "strength_mpa": 45,
+      "kind": "initial"
+    },
+    {
+      "id": "SPEC-C",
+      "element_id": "C",
+      "cast_id": "CAST-C",
+      "cycle_id": "CYCLE-C",
+      "lab_id": "LAB-C",
+      "at": "2026-01-11T00:00:00",
+      "strength_mpa": 45,
+      "kind": "initial"
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "specimens": [
+    {
+      "id": "SPEC-A2",
+      "element_id": "A",
+      "cast_id": "CAST-A",
+      "cycle_id": "CYCLE-A",
+      "lab_id": "LAB-A",
+      "at": "2026-01-12T00:00:00",
+      "strength_mpa": 35,
+      "kind": "retest"
+    }
+  ]
+}

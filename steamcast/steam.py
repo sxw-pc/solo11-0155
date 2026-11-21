@@ -19,7 +19,7 @@ def decide(db,element_id):
     if not old or (old['state'],old['reason'],old['cycle_id'])!=(state,reason,cycle['id']):
         ver=old['version']+1 if old else 1
         db.execute('INSERT INTO steam_decision VALUES(?,?,?,?,?) ON CONFLICT(element_id) DO UPDATE SET state=excluded.state,reason=excluded.reason,cycle_id=excluded.cycle_id,version=excluded.version',(element_id,state,reason,cycle['id'],ver))
-        history(db,'steam',element_id,state,reason,cycle['id'])
+        history(db,'steam',element_id,state,reason,cycle['id'],version=ver)
     from .strength import decide as strength
     strength(db,element_id)
     return dict(db.execute('SELECT * FROM steam_decision WHERE element_id=?',(element_id,)).fetchone())

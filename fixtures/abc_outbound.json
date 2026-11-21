@@ -1,0 +1,46 @@
+{
+  "contracts": [
+    {
+      "id": "CONTRACT-ENG",
+      "purpose": "engineering",
+      "recipient": "site-installer",
+      "signed_at": "2026-01-05T00:00:00",
+      "signed_by": "owner",
+      "version": 1
+    },
+    {
+      "id": "CONTRACT-LAB",
+      "purpose": "destructive_review",
+      "recipient": "independent-lab",
+      "signed_at": "2026-01-05T00:00:00",
+      "signed_by": "owner",
+      "version": 1
+    }
+  ],
+  "requests": [
+    {
+      "id": "REQ-B-ENG",
+      "element_id": "B",
+      "contract_id": "CONTRACT-ENG",
+      "at": "2026-01-15T00:00:00"
+    },
+    {
+      "id": "REQ-C-ENG",
+      "element_id": "C",
+      "contract_id": "CONTRACT-ENG",
+      "at": "2026-01-15T00:00:00"
+    },
+    {
+      "id": "REQ-B-LAB",
+      "element_id": "B",
+      "contract_id": "CONTRACT-LAB",
+      "at": "2026-01-15T00:00:00"
+    },
+    {
+      "id": "REQ-C-LAB",
+      "element_id": "C",
+      "contract_id": "CONTRACT-LAB",
+      "at": "2026-01-15T00:00:00"
+    }
+  ]
+}

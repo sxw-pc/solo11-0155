@@ -1,0 +1,44 @@
+{
+  "mould_checks": [
+    {
+      "id": "CHK-M1",
+      "mould_id": "M1",
+      "mould_version": 1,
+      "at": "2026-01-01T00:00:00",
+      "valid_until": "2026-03-01T00:00:00",
+      "result": "pass",
+      "signer": "engineer",
+      "size_ok": true
+    },
+    {
+      "id": "CHK-M2",
+      "mould_id": "M2",
+      "mould_version": 1,
+      "at": "2026-01-01T00:00:00",
+      "valid_until": "2026-03-01T00:00:00",
+      "result": "pass",
+      "signer": "engineer",
+      "size_ok": true
+    }
+  ],
+  "mix_samples": [
+    {
+      "id": "SAMPLE-X",
+      "mix_id": "X",
+      "mix_version": 1,
+      "sampled_at": "2026-01-01T00:00:00",
+      "valid_until": "2026-03-01T00:00:00",
+      "result": "pass",
+      "signer": "engineer"
+    },
+    {
+      "id": "SAMPLE-Y",
+      "mix_id": "Y",
+      "mix_version": 1,
+      "sampled_at": "2026-01-01T00:00:00",
+      "valid_until": "2026-03-01T00:00:00",
+      "result": "pass",
+      "signer": "engineer"
+    }
+  ]
+}
