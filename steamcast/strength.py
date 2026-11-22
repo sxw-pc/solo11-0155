@@ -22,6 +22,8 @@ def decide(db,element_id):
         history(db,'strength',element_id,state,reason,s['id'])
     if state in ('strength_hold','traceback') and batch:
         db.execute('INSERT INTO future_mould_hold VALUES(?,?,?) ON CONFLICT(mould_id) DO UPDATE SET state=excluded.state,reason=excluded.reason',(batch['mould_id'],'blocked','late strength failure requires mould/process review'))
+    from .handling import decide as handling
+    handling(db,element_id)
     return dict(db.execute('SELECT * FROM release_decision WHERE element_id=?',(element_id,)).fetchone())
 def import_data(db,data):
     touched=set()

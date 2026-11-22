@@ -1,6 +1,7 @@
 {
   "element":"ELEMENT-1",
   "recorded_supervisor":"shift-a",
+  "workstation":"BENCH-7",
   "load_units":12,
   "supports":{"L":0,"M":2,"R":4},
   "reported_center_range":[1.5,2.5],
@@ -9,5 +10,15 @@
     {"x":2.5,"working_pair":["M","R"]}
   ],
   "support_limit":{"L":6,"M":10,"R":6},
+  "orientations":{
+    "nameplate-toward-L":{"mirrored":false},
+    "nameplate-toward-R":{"mirrored":true}
+  },
+  "orientation_limit":{
+    "nameplate-toward-L":{"L":6,"M":10,"R":6},
+    "nameplate-toward-R":{"L":5,"M":10,"R":6}
+  },
+  "narrow_frame":"two-hook-narrow",
+  "wide_frame":{"id":"wide-balanced","point_limit":{"L":8,"M":12,"R":8}},
   "fixture_version":"BENCH-SIM-1"
 }

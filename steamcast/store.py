@@ -16,6 +16,11 @@ CREATE TABLE IF NOT EXISTS specimen(id TEXT PRIMARY KEY,element_id TEXT NOT NULL
 CREATE TABLE IF NOT EXISTS shipping(id TEXT PRIMARY KEY,element_id TEXT NOT NULL,loaded_at TEXT,recipient TEXT NOT NULL);
 CREATE TABLE IF NOT EXISTS release_decision(element_id TEXT PRIMARY KEY,state TEXT NOT NULL,reason TEXT NOT NULL,specimen_id TEXT,version INTEGER NOT NULL);
 CREATE TABLE IF NOT EXISTS future_mould_hold(mould_id TEXT PRIMARY KEY,state TEXT NOT NULL,reason TEXT NOT NULL);
+CREATE TABLE IF NOT EXISTS bench_config(id TEXT PRIMARY KEY,element_id TEXT NOT NULL,workstation TEXT NOT NULL,fixture_version TEXT NOT NULL,doc TEXT NOT NULL);
+CREATE TABLE IF NOT EXISTS weigh_stop(id TEXT PRIMARY KEY,element_id TEXT NOT NULL,bench_id TEXT NOT NULL,doc TEXT NOT NULL);
+CREATE TABLE IF NOT EXISTS frame_trial(id TEXT PRIMARY KEY,element_id TEXT NOT NULL,bench_id TEXT NOT NULL,doc TEXT NOT NULL);
+CREATE TABLE IF NOT EXISTS handling_event(id TEXT PRIMARY KEY,element_id TEXT NOT NULL,kind TEXT NOT NULL,ticket_version INTEGER NOT NULL,at TEXT NOT NULL,actor TEXT NOT NULL);
+CREATE TABLE IF NOT EXISTS handling_ticket(element_id TEXT PRIMARY KEY,state TEXT NOT NULL,reason TEXT NOT NULL,bench_id TEXT,bench_version TEXT,release_version INTEGER,frame TEXT,orientation TEXT,point_a TEXT,point_b TEXT,detail TEXT NOT NULL,version INTEGER NOT NULL);
 CREATE TABLE IF NOT EXISTS decision_history(id INTEGER PRIMARY KEY,subsystem TEXT NOT NULL,element_id TEXT NOT NULL,state TEXT NOT NULL,reason TEXT NOT NULL,source_id TEXT,created_at TEXT DEFAULT CURRENT_TIMESTAMP);
 """
 def connect(path):
